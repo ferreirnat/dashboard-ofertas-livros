@@ -73,6 +73,16 @@ def contar_cinco_estrelas(livros):
         if livro["nota"] == "Five":
             contador += 1
     return contador
+
+def encontrar_livro_mais_caro(livros):
+    livro_mais_caro = None
+    maior_preco: float = 0
+    for livro in livros:
+        preco_num: float = float(livro["preco"].replace("£", ""))
+        if preco_num > maior_preco:
+            maior_preco = preco_num
+            livro_mais_caro = livro
+    return livro_mais_caro, maior_preco
         
 if __name__ == "__main__":
     livros = ler_livros_v4()
